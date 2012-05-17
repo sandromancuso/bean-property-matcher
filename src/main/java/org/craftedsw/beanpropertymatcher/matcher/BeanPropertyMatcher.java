@@ -17,7 +17,7 @@ public class BeanPropertyMatcher<T> extends HasPropertyWithValue<T> {
 	}
 
 	@Factory
-	public static <T> Matcher<T> property(String propertyName, Matcher<?> value) {
+	public static <T> BeanPropertyMatcher<T> property(String propertyName, Matcher<?> value) {
 		return new BeanPropertyMatcher<T>(propertyName, value);
 	}
 	

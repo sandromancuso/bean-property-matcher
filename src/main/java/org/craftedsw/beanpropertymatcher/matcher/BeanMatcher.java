@@ -8,22 +8,22 @@ import org.hamcrest.StringDescription;
 
 public class BeanMatcher<T> extends BaseMatcher<T> {
 	
-	private Matcher<?>[] propertyMatchers;
+	private BeanPropertyMatcher<?>[] propertyMatchers;
 	private Description expectedDescription = new StringDescription();
 	private Description mismatchDescription = new StringDescription();
 
-	public BeanMatcher(Matcher<?>... propertyMatchers) {
+	public BeanMatcher(BeanPropertyMatcher<?>... propertyMatchers) {
 		this.propertyMatchers = propertyMatchers;
 	}
 
 	@Factory
-	public static <T> BeanMatcher<T> has(Matcher<?>... propertyMatchers) {
+	public static <T> BeanMatcher<T> has(BeanPropertyMatcher<?>... propertyMatchers) {
 		return new BeanMatcher<T>(propertyMatchers);
 	}
 	
 	public boolean matches(Object item) {
 		boolean matches = true;
-		for (Matcher<?> matcher : propertyMatchers) {
+		for (BeanPropertyMatcher<?> matcher : propertyMatchers) {
 			if (!matcher.matches(item)) {
 				matches = false;
 				appendDescriptions(item, matcher);
