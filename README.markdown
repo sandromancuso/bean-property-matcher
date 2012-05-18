@@ -48,3 +48,33 @@ Now you should get:
     but: property "firstName" was "Sandro" , property "age" <25> was less than <60> 
 </pre>
 
+Testing object graphs
+---------------------
+
+You can also do this
+
+<pre>
+    Person person = new Person();
+    person.setFirstName("Sandro");
+    person.setAge(35);
+		
+    Country uk = new Country();
+    uk.setName("United Kingdom");
+		
+    Address address = new Address();
+    address.setPostcode("1234556");
+    address.setCity("London");
+    <b>address.setCountry(uk);</b>
+		
+    <b>person.setAddress(address);</b>
+		
+    assertThat(person, has(
+                            property("firstName", equalTo("Sandro")),
+                            property("age", greaterThan(18)),
+                            property("address.city", equalTo("London")),
+                            property("address.postcode", equalTo("1234556")),
+                            property("address.country.name", equalTo("United Kingdom"))));		
+
+</pre>
+
+Enjoy!!!
