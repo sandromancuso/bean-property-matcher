@@ -21,11 +21,6 @@ public class BeanMatcher<T> extends BaseMatcher<T> {
 		return new BeanMatcher<T>(propertyMatchers);
 	}
 	
-	@Factory
-	public static <T> BeanMatcher<T> thatHas(BeanPropertyMatcher<?>... propertyMatchers) {
-		return has(propertyMatchers);
-	}
-	
 	public boolean matches(Object item) {
 		boolean matches = true;
 		for (BeanPropertyMatcher<?> matcher : propertyMatchers) {

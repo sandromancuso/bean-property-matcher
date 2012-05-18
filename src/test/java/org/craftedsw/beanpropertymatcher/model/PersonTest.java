@@ -35,11 +35,14 @@ public class PersonTest {
 		person.setFirstName("Sandro");
 		person.setAge(35);
 		
+		Country uk = new Country();
+		uk.setName("United Kingdom");
+		
 		Address address = new Address();
 		address.setFirstLine("15 Some Street");
 		address.setPostcode("1234556");
 		address.setCity("London");
-		address.setCountry("United Kingdom");
+		address.setCountry(uk);
 		
 		person.setAddress(address);
 		
@@ -47,7 +50,9 @@ public class PersonTest {
 								property("firstName", equalTo("Sandro")),
 								property("age", greaterThan(18)),
 								property("address.city", equalTo("London")),
-								property("address.postcode", equalTo("1234556"))));			
+								property("address.postcode", equalTo("1234556")),
+								property("address.country.name", equalTo("United Kingdom"))));		
+			
 	}
 
 }

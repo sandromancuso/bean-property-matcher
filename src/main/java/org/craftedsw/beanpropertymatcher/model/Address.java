@@ -6,7 +6,15 @@ public class Address {
 	private String secondLine;
 	private String postcode;
 	private String city;
-	private String country;
+	private Country country;
+
+	public Country getCountry() {
+		return country;
+	}
+
+	public void setCountry(Country country) {
+		this.country = country;
+	}
 
 	public String getFirstLine() {
 		return firstLine;
@@ -38,14 +46,6 @@ public class Address {
 
 	public void setCity(String city) {
 		this.city = city;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
 	}
 
 }

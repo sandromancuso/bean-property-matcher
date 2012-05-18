@@ -1,13 +1,14 @@
 Hamcrest matcher to match multiple attributes of an object within a single assertion.
 
-How to use it:
+How to use it
+-------------
 
 <pre>
     // Static imports
     
     import static org.craftedsw.beanpropertymatcher.matcher.BeanMatcher.has;
     import static org.craftedsw.beanpropertymatcher.matcher.BeanPropertyMatcher.property;
-    import static org.hamcrest.MatcherAssert.assertThat;
+    <b>import static org.hamcrest.MatcherAssert.assertThat;</b>
     import static org.hamcrest.Matchers.equalTo;
     import static org.hamcrest.Matchers.greaterThan;
 
@@ -21,7 +22,8 @@ How to use it:
     // Then you can test it like that
     
     assertThat(person, has(
-                            property("firstName", equalTo("Sandro")),
-                            property("age", greaterThan(18)),
+                            <b><font color="red">property("firstName", equalTo("Another dude")), </font></b>
+                            property("age", <b>greaterThan(18)</b>),  <font color="green">// Use any matcher</font> 
                             property("lastName", equalTo("Mancuso"))));
 </pre>
+
