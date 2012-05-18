@@ -34,3 +34,17 @@ If you run this test, you will get a message like
         Expected: property "firstName" = "Another dude" 
         but: property "firstName" was "Sandro" 
 </pre>
+
+Now, change the age check to:
+<pre>
+   property("age", <b>greaterThan(60)</b>) 
+</pre>
+
+Now you should get:
+
+<pre>
+    java.lang.AssertionError: 
+    Expected: property "firstName" = "Another dude" , property "age" = a value greater than <60> 
+    but: property "firstName" was "Sandro" , property "age" <25> was less than <60> 
+</pre>
+
