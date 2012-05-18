@@ -47,8 +47,8 @@ Now you should get:
 
 <pre>
     java.lang.AssertionError: 
-    Expected: property "firstName" = "Another dude" , property "age" = a value greater than <60> 
-    but: property "firstName" was "Sandro" , property "age" <25> was less than <60> 
+    Expected: property "firstName" = "Another dude" , property "age" = a value greater than &lt;60&gt; 
+    but: property "firstName" was "Sandro" , property "age" &lt;25&gt; was less than &lt;60&gt;
 </pre>
 
 Testing object graphs
