@@ -22,8 +22,15 @@ How to use it
     // Then you can test it like that
     
     assertThat(person, has(
-                            <b><font color="red">property("firstName", equalTo("Another dude")), </font></b>
+                            <b><font color="red">property("firstName", equalTo("Another dude")),  // Mistmatch</font></b>
                             property("age", <b>greaterThan(18)</b>),  <font color="green">// Use any matcher</font> 
                             property("lastName", equalTo("Mancuso"))));
 </pre>
 
+If you run this test, you will get a message like
+
+<pre>
+    java.lang.AssertionError: 
+        Expected: property "firstName" = "Another dude" 
+        but: property "firstName" was "Sandro" 
+</pre>

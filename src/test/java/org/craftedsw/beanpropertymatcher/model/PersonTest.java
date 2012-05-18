@@ -25,8 +25,8 @@ public class PersonTest {
 		person.setLastName("Mancuso");
 		
 		assertThat(person, has(
-								property("firstName", equalTo("Sandro")),
-								property("age", greaterThan(18)),
+								property("firstName", equalTo("Another dude")),
+								property("age", greaterThan(48)),
 								property("lastName", equalTo("Mancuso"))));
 	}
 	
